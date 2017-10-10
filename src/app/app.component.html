@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <ul class="nav">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/">Home</a></li>
+    <li routerLinkActive="active"><a routerLink="/products">Products</a></li>
+    <li routerLinkActive="active"><a routerLink="/animations-all">All Animations</a></li>
+  </ul>
+</nav>
+
+<main>
+    <router-outlet></router-outlet>
+</main>

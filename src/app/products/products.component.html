@@ -1,0 +1,26 @@
+<section>
+  <h1>Products</h1>
+  <button routerLink="add" class="btn save">Add Product</button>
+
+  <div class="table-head">
+    <span class="col-md-6">Product</span>
+    <span class="col-md-3">Price</span>
+    <span class="col-md-3"></span>
+  </div>
+  <hr />
+  <div>
+    <div *ngFor="let product of products"
+         (@flyInOut.start)="animationStarted($event)"
+         (@flyInOut.done)="animationDone($event)"
+         [@flyInOut]="'in'"
+         class="product-cell">
+      <span class="col-md-6"><a [routerLink]="['edit', product.id]">{{product.name}}</a></span>
+      <span class="col-md-3">${{product.price}}</span>
+      <span class="col-md-3"><a (click)="deleteProduct(product.id)" class="btn btn cancel">Delete</a></span>
+    </div>
+  </div>
+
+  <div class="view-side-form">
+    <router-outlet></router-outlet>
+  </div>
+</section>

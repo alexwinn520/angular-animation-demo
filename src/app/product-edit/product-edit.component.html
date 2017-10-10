@@ -1,0 +1,23 @@
+<div class="side-form">
+    <h1>{{title}}</h1>
+    <div class="form-container">
+        <form (submit)="saveProduct()">
+            <div class="form-group">
+                <div>
+                  <label *ngIf="!labelisHidden" for="name">Name</label>
+                </div>
+                <input type="text" name="name" [(ngModel)]="product.name" class="form-control" placeholder="Name" required (formFocus)="toggleLabelState($event)" />
+            </div>
+            <div class="form-group">
+                <div>
+                  <label *ngIf="!labelisHidden" for="price">Price</label>
+                </div>
+                <input type="text" name="price" [(ngModel)]="product.price" class="form-control" placeholder="Price" required (formFocus)="toggleLabelState($event)" />
+            </div>
+            <div class="form-group">
+                <a class="btn cancel" routerLink="/products">Cancel</a>
+                <button type="submit" class="btn save">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
